@@ -58,7 +58,7 @@ const AboutSection = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.5 }}
               >
-                <span className="font-display text-3xl md:text-4xl font-bold text-gold">3+</span>
+                <span className="font-display text-3xl md:text-4xl font-bold text-gold">4+</span>
                 <p className="text-sm text-muted-foreground mt-1">Years in Web3</p>
               </motion.div>
               <motion.div
@@ -66,7 +66,7 @@ const AboutSection = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.6 }}
               >
-                <span className="font-display text-3xl md:text-4xl font-bold text-gold">100K+</span>
+                <span className="font-display text-3xl md:text-4xl font-bold text-gold">10K+</span>
                 <p className="text-sm text-muted-foreground mt-1">Community Members</p>
               </motion.div>
             </div>

@@ -1,38 +1,51 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Check } from "lucide-react";
 
 const projects = [
   {
-    name: "DegenDAO",
-    role: "Community Lead",
-    contribution: "Built and scaled community from 0 to 15K members",
+    name: "Timmytoastersol",
+    role: "Community Manager",
+    contribution:
+      "Helped Timmy with a successful launch, same day of launch they did $286K Market cap",
+    image: "stimmy.jpg",
+    verified: true,
   },
   {
-    name: "MetaVerse Labs",
-    role: "Brand Strategist",
-    contribution: "Defined brand positioning and launch strategy",
+    name: "Spyfly",
+    role: "Growth manager",
+    contribution: "Referred over 500 memecoin traders to Spyfly app under 3 days",
+    image: "spy.png",
+    verified: true,
   },
   {
-    name: "ChainLink Protocol",
-    role: "Mod Team Lead",
-    contribution: "Established moderation framework and guidelines",
+    name: "Crouton Jones",
+    role: "Marketer",
+    contribution: "Less than a week i got runaway joes over 1500 players on the App Store and play store",
+    image: "crouton jones.jpg",
+    verified: true,
   },
   {
-    name: "NFT Collective",
-    role: "Growth Operator",
-    contribution: "Orchestrated Twitter presence and engagement",
+    name: "Rich CTO",
+    role: "Marketer",
+    contribution: "Took rich from $250K to $800K market cap as a marketer",
+    image: "rich-cto.jpg",
+    verified: true,
   },
   {
-    name: "Web3 Ventures",
-    role: "Community Advisor",
-    contribution: "Strategic advisory on community-led growth",
+    name: "POV",
+    role: "Growth strategist",
+    contribution: "",
+    image: "pov.jpg",
+    verified: true,
   },
-  {
-    name: "Crypto Guild",
-    role: "Operations Lead",
-    contribution: "Managed launch operations and team coordination",
-  },
+  // {
+  //   name: "Crypto Guild",
+  //   role: "Operations Lead",
+  //   contribution: "Managed launch operations and team coordination",
+  //   image: "/projects/crypto-guild.png",
+  //   verified: false,
+  // },
 ];
 
 const ProjectsSection = () => {
@@ -42,6 +55,7 @@ const ProjectsSection = () => {
   return (
     <section ref={ref} className="py-32 relative">
       <div className="container px-6">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -52,13 +66,15 @@ const ProjectsSection = () => {
             Portfolio
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-4">
-            Projects & <span className="text-gradient-gold">Collaborations</span>
+            Projects &{" "}
+            <span className="text-gradient-gold">Collaborations</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
             A selection of Web3 projects I've contributed to and helped scale.
           </p>
         </motion.div>
 
+        {/* Grid */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
@@ -71,21 +87,38 @@ const ProjectsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 * index, duration: 0.5 }}
-              className="group relative p-6 rounded-xl bg-card/50 border border-border hover:border-gold/20 transition-all duration-300 hover:bg-card"
+              className={`group relative p-6 rounded-xl bg-card/50 border border-border transition-all duration-300 hover:bg-card hover:border-gold/20 ${
+                project.verified
+                  ? "group-hover:shadow-[0_0_30px_rgba(212,175,55,0.12)]"
+                  : ""
+              }`}
             >
-              {/* Project logo placeholder */}
-              <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mb-4 font-display font-bold text-gold text-lg">
-                {project.name.charAt(0)}
+              {/* Logo + Verified Badge */}
+              <div className="relative w-12 h-12 mb-4">
+                <div className="w-12 h-12 rounded-lg overflow-hidden bg-muted flex items-center justify-center">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-full object-contain p-1 rounded-lg"
+                  />
+                </div>
+
+                {project.verified && (
+                  <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-gold flex items-center justify-center shadow-md">
+                    <Check className="w-3 h-3 text-black" strokeWidth={3} />
+                  </div>
+                )}
               </div>
 
-              <h3 className="font-display text-lg font-semibold text-ivory mb-1">
+              {/* Text */}
+              <h3 className="font-display text-lg font-semibold text-ivory mb-1 flex items-center gap-2">
                 {project.name}
               </h3>
-              
+
               <span className="text-sm text-gold font-medium">
                 {project.role}
               </span>
-              
+
               <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
                 {project.contribution}
               </p>

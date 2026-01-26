@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, Mail, Twitter } from "lucide-react";
+import { ArrowUpRight, Send, Twitter } from "lucide-react";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -40,16 +40,17 @@ const ContactSection = () => {
             className="flex flex-wrap justify-center gap-4 mt-10 relative"
           >
             <Button variant="hero" size="xl" className="group" asChild>
-              <a href="https://twitter.com/TheLordVibez" target="_blank" rel="noopener noreferrer">
+              <a href="https://x.com/TheLordVibeZ" target="_blank" rel="noopener noreferrer">
                 <Twitter className="w-5 h-5" />
                 DM on X
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </Button>
             <Button variant="heroOutline" size="xl" className="group" asChild>
-              <a href="mailto:hello@thelordvibez.com">
-                <Mail className="w-5 h-5" />
-                Send Email
+              <a href="https://t.me/LordVibeZ_0" target="_blank" rel="noopener noreferrer">
+                <Send className="w-5 h-5" />
+                DM on Telegram
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </Button>
           </motion.div>
