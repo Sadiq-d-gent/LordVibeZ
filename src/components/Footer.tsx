@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Twitter, Github, Linkedin } from "lucide-react";
+import { Twitter, Send } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -19,7 +19,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex items-center gap-4">
             <a
-              href="https://twitter.com/TheLordVibez"
+              href="https://x.com/TheLordVibeZ"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/30 transition-colors"
@@ -27,20 +27,12 @@ const Footer = () => {
               <Twitter className="w-5 h-5" />
             </a>
             <a
-              href="https://github.com"
+              href="https://t.me/LordVibeZ_0"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/30 transition-colors"
             >
-              <Github className="w-5 h-5" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/30 transition-colors"
-            >
-              <Linkedin className="w-5 h-5" />
+              <Send className="w-5 h-5" />
             </a>
           </div>
 
